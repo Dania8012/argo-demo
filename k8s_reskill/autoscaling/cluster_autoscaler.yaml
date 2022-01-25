@@ -138,7 +138,7 @@ spec:
             - --nodes=2:8:<AUTOSCALING GROUP NAME>
           env:
             - name: AWS_REGION
-              value: us-west-2
+              value: eu-west-1
           volumeMounts:
             - name: ssl-certs
               mountPath: /etc/ssl/certs/ca-certificates.crt

@@ -32,7 +32,7 @@ You must also create a VPC and a security group for your cluster to use. Althoug
 
 Specify this S3 template URL in CloudFormation:
 
-`https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2018-11-07/amazon-eks-vpc-sample.yaml`
+`https://amazon-eks.s3-eu-west-1.amazonaws.com/cloudformation/2018-11-07/amazon-eks-vpc-sample.yaml`
 
 This is also available from the [EKS Getting Started Guide](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html#vpc-create)
 
@@ -53,7 +53,7 @@ This step can take several minutes to complete.
 For example, to install version 1.10.3 on macOS:
 
 ```sh
-curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/darwin/amd64/kubectl
+curl -o kubectl https://amazon-eks.s3-eu-west-1.amazonaws.com/1.10.3/2018-07-26/bin/darwin/amd64/kubectl
 
 chmod +x ./kubectl
 ```
@@ -63,7 +63,7 @@ Ensure that `kubectl` is in your `PATH`.
 To install on Amazon Linux:
 
 ```bash
-curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/amd64/kubectl
+curl -o kubectl https://amazon-eks.s3-eu-west-1.amazonaws.com/1.10.3/2018-07-26/bin/linux/amd64/kubectl
 
 chmod +x ./kubectl
 
@@ -78,7 +78,7 @@ echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
 For example, to install version 1.10.3 for macOS:
 
 ```sh
-curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/darwin/amd64/aws-iam-authenticator
+curl -o aws-iam-authenticator https://amazon-eks.s3-eu-west-1.amazonaws.com/1.10.3/2018-07-26/bin/darwin/amd64/aws-iam-authenticator
 
 chmod +x ./aws-iam-authenticator
 ```
@@ -95,22 +95,22 @@ Wait for the cluster status to show `ACTIVE`.
 
 Create the following CloudFormation stack using this S3 URL:
 
-`https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2018-11-07/amazon-eks-nodegroup.yaml`
+`https://amazon-eks.s3-eu-west-1.amazonaws.com/cloudformation/2018-11-07/amazon-eks-nodegroup.yaml`
 
 Specify the Amazon EKS-optimized AMI ID for your region:
 
-|Region|Amazon EKS-optimized AMI|
-|------|------------------------|
-|US West (Oregon) (us-west-2)|ami-0f54a2f7d2e9c88b3|
-|US East (N. Virginia)(us-east-1)|ami-0a0b913ef3249b655|
-|US East (Ohio)(us-east-2)|ami-0958a76db2d150238|
-|EU (Ireland)(eu-west-1)|ami-00c3b2d35bddd4f5c|
+| Region                           | Amazon EKS-optimized AMI |
+| -------------------------------- | ------------------------ |
+| US West (Oregon) (eu-west-1)     | ami-0f54a2f7d2e9c88b3    |
+| US East (N. Virginia)(us-east-1) | ami-0a0b913ef3249b655    |
+| US East (Ohio)(us-east-2)        | ami-0958a76db2d150238    |
+| EU (Ireland)(eu-west-1)          | ami-00c3b2d35bddd4f5c    |
 
 ## Enable Worker Nodes to Join Cluster
 
 Download the configuration map:
 
-`curl -O https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2018-11-07/aws-auth-cm.yaml`
+`curl -O https://amazon-eks.s3-eu-west-1.amazonaws.com/cloudformation/2018-11-07/aws-auth-cm.yaml`
 
 Edit this file, replacing the `<ARN of instance role (not instance profile)> ` snippet with the `NodeInstanceRole` value that you recorded in the previous procedure, and save the file.
 
